@@ -1,3 +1,11 @@
+<?php
+if(isset($_POST['loginButton'])) {
+	echo "LOGIN button IS PRESSED";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
 <body>
 
 	<div id="inputContainer">
-		<form action="register.php" id="loginForm">
+		<form action="register.php" id="loginForm" method="POST">
 			<h2>Login your account</h2>
 			<p>
 				<label for="loginUsername">Username</label>
@@ -15,13 +23,13 @@
 			</p>
 			<p>
 				<label for="loginPassword">Password</label>
-				<input type="text" id="loginPassword" name="loginPassword" required>
+				<input type="password" id="loginPassword" name="loginPassword" required>
 			</p>
 
 			<button type="submit" name="loginButton">Log In</button>
 		</form>
 
-		<form action="register.php" id="registerForm">
+		<form action="register.php" id="registerForm" method="POST">
 			<h2>Register your account</h2>
 			
 			<p>
@@ -54,7 +62,7 @@
 				<input type="password" id="password2" name="password2" required>
 			</p>
 
-			<button type="submit" name="loginButton">Sign Up</button>
+			<button type="submit" name="registerButton">Sign Up</button>
 		</form>
 	</div>
 	
