@@ -2,7 +2,7 @@
 	include("includes/classes/Account.php");
 
 	$account = new Account();
-	$account->register();
+
 	include("includes/handlers/login-handler.php");
 	include("includes/handlers/register-handler.php");
 ?>
@@ -34,26 +34,33 @@
 			<h2>Register your account</h2>
 			
 			<p>
+				<?php echo $account->getError("Your first name must be between 2 and 20 characters"); ?>
 				<label for="firstname">First name</label>
 				<input type="text" id="firstname" name="firstname" required>
 			</p>
 
 			<p>
+				<?php echo $account->getError("Your last name must be between 2 and 20 characters"); ?>
 				<label for="lastname">Last name</label>
 				<input type="text" id="lastname" name="lastname" required>
 			</p>
 
 			<p>
+				<?php echo $account->getError("Your username must be between 5 and 15 characters"); ?>
 				<label for="username">Username</label>
 				<input type="text" id="username" name="username" required>
 			</p>
 
 			<p>
+				<?php echo $account->getError("Email is invalid"); ?>
 				<label for="email">Email</label>
 				<input type="email" id="email" name="email" required>
 			</p>
 
 			<p>
+				<?php echo $account->getError("Your passwords don't match"); ?>
+				<?php echo $account->getError("Your password can contain numbers and letters"); ?>
+				<?php echo $account->getError("Your password must be between 5 and 30 characters"); ?>
 				<label for="password">Password</label>
 				<input type="password" id="password" name="password" required>
 			</p>

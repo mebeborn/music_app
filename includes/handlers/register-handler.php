@@ -24,12 +24,20 @@ function cleanFormText($inputText) {
 if(isset($_POST['registerButton'])) {
 	//Register button was pressed
 
-	$firstname = cleanFormText($_POST['firstname']);
-	$lastname = cleanFormText($_POST['lastname']);
-	$username = cleanFormString($_POST['username']);
-	$password = cleanFormPassword($_POST['password']);
-	$password2 = cleanFormPassword($_POST['password2']);
-	$email = cleanFormString($_POST['email']);
+	$fn = cleanFormText($_POST['firstname']);
+	$ln = cleanFormText($_POST['lastname']);
+	$un = cleanFormString($_POST['username']);
+	$pw = cleanFormPassword($_POST['password']);
+	$pw2 = cleanFormPassword($_POST['password2']);
+	$em = cleanFormString($_POST['email']);
+
+	//Account
+	$wasSuccessful = $account->register($fn, $ln, $un, $pw, $pw2, $em);
+
+	if($wasSuccessful) {
+		header("Loaction: index.php");
+	}
+	
 }
 
 
