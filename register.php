@@ -6,6 +6,12 @@
 
 	include("includes/handlers/login-handler.php");
 	include("includes/handlers/register-handler.php");
+
+	function getInputValue($name){
+		if(isset($_POST[$name])){
+			echo $_POST[$name];
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -37,25 +43,25 @@
 			<p>
 				<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 				<label for="firstname">First name</label>
-				<input type="text" id="firstname" name="firstname" required>
+				<input type="text" id="firstname" name="firstname" value="<?php getInputValue('firstname') ?>"required>
 			</p>
 
 			<p>
 				<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 				<label for="lastname">Last name</label>
-				<input type="text" id="lastname" name="lastname" required>
+				<input type="text" id="lastname" name="lastname" value="<?php getInputValue('lastname') ?>" required>
 			</p>
 
 			<p>
 				<?php echo $account->getError(Constants::$usernameCharacters); ?>
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" required>
+				<input type="text" id="username" name="username" value="<?php getInputValue('username') ?>" required>
 			</p>
 
-			<p>Constants::
+			<p>
 				<?php echo $account->getError(Constants::$emailInvalid); ?>
 				<label for="email">Email</label>
-				<input type="email" id="email" name="email" required>
+				<input type="email" id="email" name="email" value="<?php getInputValue('email') ?>" required>
 			</p>
 
 			<p>
