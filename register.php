@@ -20,6 +20,42 @@
 
 			<button type="submit" name="loginButton">Log In</button>
 		</form>
+
+		<form action="register.php" id="registerForm">
+			<h2>Register your account</h2>
+			
+			<p>
+				<label for="firstname">First name</label>
+				<input type="text" id="firstname" name="firstname" required>
+			</p>
+
+			<p>
+				<label for="lastname">Last name</label>
+				<input type="text" id="lastname" name="lastname" required>
+			</p>
+
+			<p>
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" required>
+			</p>
+
+			<p>
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+			</p>
+
+			<p>
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+			</p>
+
+			<p>
+				<label for="password2">Confirm Password</label>
+				<input type="password" id="password2" name="password2" required>
+			</p>
+
+			<button type="submit" name="loginButton">Sign Up</button>
+		</form>
 	</div>
 	
 </body>
