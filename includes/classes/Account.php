@@ -1,4 +1,5 @@
 <?php
+
 	class Account {
 
 		private $errorArray;
@@ -35,7 +36,7 @@
 		private function validateUsername($un) {
 
 			if (strlen($un) < 5 || strlen($un) > 15) {
-				array_push($this->errorArray, "Your username must be between 5 and 15 characters");
+				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
 			}
 
@@ -47,7 +48,7 @@
 		private function validateFirstname($fn) {
 
 			if (strlen($fn) < 2 || strlen($fn) > 20) {
-				array_push($this->errorArray, "Your first name must be between 2 and 20 characters");
+				array_push($this->errorArray, Constants::$firstNameCharacters);
 				return;
 			}
 
@@ -56,7 +57,7 @@
 		private function validateLastname($ln) {
 
 			if (strlen($ln) < 2 || strlen($ln) > 20) {
-				array_push($this->errorArray, "Your last name must be between 2 and 20 characters");
+				array_push($this->errorArray, Constants::$lastNameCharacters);
 				return;
 			
 			}
@@ -65,7 +66,7 @@
 		private function validateEmail($em) {
 
 			if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
-				array_push($this->errorArray, "Email is invalid");
+				array_push($this->errorArray,  Constants::$emailInvalid);
 			}
 
 			//TODO: Check if the username exists
@@ -75,19 +76,20 @@
 		private function validatePasswords($pw, $pw2) {
 
 			if($pw != $pw2) {
-				array_push($this->errorArray, "Your passwords don't match");
+				array_push($this->errorArray, Constants::$passwordsDoNoMatch);
 			}
 
 			if(preg_match('/[^A-Za-z0-9]/', $pw)) {
-				array_push($this->errorArray, "Your password can contain numbers and letters");
+				array_push($this->errorArray, Constants::$passwordNotAlphanumeric);
 				return;
 			}
 
 			if (strlen($pw) < 5 || strlen($pw) > 30) {
-				array_push($this->errorArray, "Your password must be between 5 and 30 characters");
+				array_push($this->errorArray, Constants::$passwordCharacters);
 				return;
 			}
 
 		}
+	
 	}
 ?>
