@@ -2,9 +2,11 @@
 
 	class Account {
 
+		private $con;
 		private $errorArray;
 		
-		public function __construct() {
+		public function __construct($con) {
+			$this->con = $con;
 			$this->errorArray = array();
 		}
 
@@ -18,7 +20,7 @@
 
 			if(empty($this->arrorArray)) {
 				//Insert into DB
-				return true;
+				return insertUserDetails($un, $fn, $em, $pw);
 			}else {
 				return false;
 			}		
@@ -31,6 +33,16 @@
 			}
 
 			return "<span class='errorMessage'>$error</span>";
+		}
+
+		private function insertUserDetails($un, $fn, $em, $pw) {
+			$encrypted = md5($pw);//Crypt before storing
+			$profilePic = "assets/images/profile-pics/head-emerald.png";
+			$date = date("Y-m-d");
+
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
+
+			return $result;
 		}
 
 		private function validateUsername($un) {
