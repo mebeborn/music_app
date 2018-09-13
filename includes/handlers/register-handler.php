@@ -34,8 +34,10 @@ if(isset($_POST['registerButton'])) {
 	//Account
 	$wasSuccessful = $account->register($fn, $ln, $un, $pw, $pw2, $em);
 
+
 	if($wasSuccessful) {
-		header("Loaction: index.php");
+		// header("Loaction: index.php");
+		echo "$wasSuccessful";
 	}
 	
 }

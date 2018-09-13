@@ -55,12 +55,14 @@
 
 			<p>
 				<?php echo $account->getError(Constants::$usernameCharacters); ?>
+				<?php echo $account->getError(Constants::$usernameTaken); ?>
 				<label for="username">Username</label>
 				<input type="text" id="username" name="username" value="<?php getInputValue('username') ?>" required>
 			</p>
 
 			<p>
 				<?php echo $account->getError(Constants::$emailInvalid); ?>
+				<?php echo $account->getError(Constants::$emailTaken); ?>
 				<label for="email">Email</label>
 				<input type="email" id="email" name="email" value="<?php getInputValue('email') ?>" required>
 			</p>

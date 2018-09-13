@@ -20,7 +20,7 @@
 
 			if(empty($this->arrorArray)) {
 				//Insert into DB
-				return insertUserDetails($un, $fn, $em, $pw);
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 			}else {
 				return false;
 			}		
@@ -35,8 +35,8 @@
 			return "<span class='errorMessage'>$error</span>";
 		}
 
-		private function insertUserDetails($un, $fn, $em, $pw) {
-			$encrypted = md5($pw);//Crypt before storing
+		private function insertUserDetails($un, $fn, $ln, $em, $pw) {
+			$encryptedPw = md5($pw);//Crypt before storing
 			$profilePic = "assets/images/profile-pics/head-emerald.png";
 			$date = date("Y-m-d");
 
@@ -52,7 +52,10 @@
 				return;
 			}
 
-			//TODO: Check if the username exists
+			$checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$un'");
+			if(mysqli_num_rows($checkUsernameQuery) != 0) {
+				array_push($this->errorArray, Constants::$usernameTaken);
+			}
 
 		}
 
@@ -81,7 +84,11 @@
 				array_push($this->errorArray,  Constants::$emailInvalid);
 			}
 
-			//TODO: Check if the username exists
+			$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
+			if(mysqli_num_rows($checkEmailQuery) != 0) {
+				array_push($this->errorArray, Constants::$emailTaken);
+			}
+
 
 		}
 
