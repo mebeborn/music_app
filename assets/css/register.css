@@ -2,7 +2,6 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	box-sizing: border-box;
 }
 
 #background {
@@ -13,4 +12,19 @@ html, body {
     display: table;
     height: 100%;
     width: 100%;
+}
+
+#loginContainer * {
+	color: #fff;
+	font-family: "Halvetica Neue", "Halvetica", "Arial", sans-serif;
+	font-weight: normal;
+	line-height: 1em;
+	box-sizing: border-box;	
+}
+
+#loginContainer {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	max-width: 1024px;
 }
