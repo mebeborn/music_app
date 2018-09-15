@@ -31,14 +31,19 @@
 					<p>
 						<?php echo $account->getError(Constants::$loginFailed); ?>
 						<label for="loginUsername">Username</label>
-						<input type="text" id="loginUsername" name="loginUsername" placeholder="alexborn" required>
+						<input type="text" id="loginUsername" name="loginUsername" placeholder="Barten" required>
 					</p>
 					<p>
 						<label for="loginPassword">Password</label>
-						<input type="password" id="loginPassword" name="loginPassword" required>
+						<input type="password" id="loginPassword" name="loginPassword" placeholder="Your password" required>
 					</p>
 
 					<button type="submit" name="loginButton">Log In</button>
+					<div class="hasAccountText">
+						<span id="hideLogin">
+							Don't have an account yet? Signup here.
+						</span>
+					</div>
 				</form>
 
 				<form action="register.php" id="registerForm" method="POST">
@@ -47,27 +52,30 @@
 					<p>
 						<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 						<label for="firstname">First name</label>
-						<input type="text" id="firstname" name="firstname" value="<?php getInputValue('firstname') ?>"required>
+						<input type="text" id="firstname" name="firstname" value="<?php getInputValue('firstname') ?>"
+						placeholder="Derik" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 						<label for="lastname">Last name</label>
-						<input type="text" id="lastname" name="lastname" value="<?php getInputValue('lastname') ?>" required>
+						<input type="text" id="lastname" name="lastname" value="<?php getInputValue('lastname') ?>" 
+						placeholder="Herinkton" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$usernameCharacters); ?>
 						<?php echo $account->getError(Constants::$usernameTaken); ?>
 						<label for="username">Username</label>
-						<input type="text" id="username" name="username" value="<?php getInputValue('username') ?>" required>
+						<input type="text" id="username" name="username" value="<?php getInputValue('username') ?>"
+						placeholder="Pozzier" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$emailInvalid); ?>
 						<?php echo $account->getError(Constants::$emailTaken); ?>
 						<label for="email">Email</label>
-						<input type="email" id="email" name="email" value="<?php getInputValue('email') ?>" required>
+						<input type="email" id="email" name="email" value="<?php getInputValue('email') ?>" placeholder="derik1932@gmail.com" required>
 					</p>
 
 					<p>
@@ -75,15 +83,21 @@
 						<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
 						<?php echo $account->getError(Constants::$passwordCharacters); ?>
 						<label for="password">Password</label>
-						<input type="password" id="password" name="password" required>
+						<input type="password" id="password" name="password" placeholder="Your password" required>
 					</p>
 
 					<p>
 						<label for="password2">Confirm Password</label>
-						<input type="password" id="password2" name="password2" required>
+						<input type="password" id="password2" name="password2" placeholder="Repeat your password" required>
 					</p>
 
 					<button type="submit" name="registerButton">Sign Up</button>
+					<div class="hasAccountText">
+						<span id="hideRegister">
+							Already have an account? Log in here.
+						</span>
+					</div>
+
 				</form>
 			</div>
 		</div>
