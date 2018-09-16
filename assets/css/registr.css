@@ -45,7 +45,8 @@ html, body {
 }
 
 #inputContainer label {
-	margin-top: 15px;
+	display: block;
+	margin-top: 10px;
 	font-size: 13px;
 	color: #e8e8e8;
 }
@@ -72,6 +73,12 @@ html, body {
 	margin: 20px auto;
 	height: 41px;
 	width: 100%;
+}
+
+#inputContainer .errorMessage {
+	color: #07d159;
+	font-size: 12px;
+	display: block;
 }
 
 #inputContainer button:hover {
