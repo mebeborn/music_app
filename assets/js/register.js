@@ -4,8 +4,6 @@ $(document).ready(function() {
 		$("#loginForm").hide();
 	});
 
-	console.log("Hi");
-
 	$("#hideRegister").click(function() {
 			$("#registerForm").hide();
 			$("#loginForm").show();

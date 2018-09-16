@@ -20,13 +20,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Welcomy to Music App</title>
-	<link rel="stylesheet" href="assets/css/register.css">
+	<link rel="stylesheet" href="assets/css/registr.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="assets/js/register.js"></script>
 
 </head>
 <body>
+
+	<?php
+		if (isset($_POST['registerButton'])) {
+			echo '<script>
+					$(document).ready(function() {
+						$("#registerForm").show();
+						$("#loginForm").hide();
+					});
+				</script>';	
+		}else {
+			echo '<script>
+					$(document).ready(function() {
+						$("#registerForm").hide();
+						$("#loginForm").show();
+					});
+				</script>';
+		}
+	?>
+
 	<div id="background">
 		<div id="loginContainer">
 			<div id="inputContainer">
