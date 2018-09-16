@@ -21,6 +21,10 @@
 	<meta charset="UTF-8">
 	<title>Welcomy to Music App</title>
 	<link rel="stylesheet" href="assets/css/register.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/js/register.js"></script>
+
 </head>
 <body>
 	<div id="background">
