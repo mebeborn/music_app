@@ -123,6 +123,17 @@
 
 				</form>
 			</div>
+
+			<div id="loginText">
+				<h1>Get great music right now</h1>
+				<h2>Listen to loads of songs free</h2>
+				<ul>
+					<li>Discover music you will fall in love with</li>
+					<li>Create your own playlist</li>
+					<li>Follow artists to keep up to date</li>
+				</ul>
+			</div>
+			
 		</div>
 	</div>
 </body>

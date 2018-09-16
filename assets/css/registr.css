@@ -85,9 +85,37 @@ html, body {
 .hasAccountText span {
 	font-weight: bold;
 	font-size: 12px;
+	cursor: pointer;
 }
 
 #registerForm,
 #loginForm {
 	display: none;
+}
+
+#loginText {
+	display: table-cell;
+	padding: 45px;
+}
+
+#loginText h1 {
+	color: #07d159;
+	font-size: 60px;
+	font-weight: bold;
+}
+
+#loginText h1 {
+	margin: 35px;
+	margin-left: 0;
+}
+
+#loginText ul {
+	padding: 0;
+}
+
+#loginText li {
+	list-style-type: none;
+	padding: 5px 30px;
+	font-size: 20px;
+	background: url(../images/icons/checkmark.png) no-repeat 0 0;
 }
