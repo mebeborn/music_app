@@ -1,6 +1,7 @@
 * {
 	font-family: "Halvetica Neue", Halvetica, Arial, sans-serif;
 	color: #fff;
+	letter-spacing: 1px;
 }
 
 html, body {
@@ -240,6 +241,10 @@ body {
 
 .gridViewItem img {
 	width: 100%;
+}
+
+.gridViewItem a {
+	text-decoration: none;
 }
 
 .gridViewInfo {
