@@ -45,6 +45,19 @@
 
 			return mysqli_num_rows($query);
 		}
+
+		public function getSongIds() {
+			$query = mysqli_query($this->con, "SELECT id FROM songs WHERE album = '$this->id'");
+
+			$array = array();
+
+			while($row = mysqli_fetch_array($query)) {
+				array_push($array, $row['id']);
+			}
+
+			return $array;
+
+		}
 	}
 
 ?>
