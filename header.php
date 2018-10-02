@@ -20,10 +20,10 @@
 	<meta charset="UTF-8">
 	<title>Welcome to Music App</title>
 	<link rel="stylesheet" href="assets/css/index.css">
+	<script src="assets/js/script.js"></script>
 </head>
 <body>
 
-	
 	<div class="mainContainer">
 		
 		<div id="topContainer">

@@ -24,8 +24,8 @@ $artist = $album->getArtist();
 
 </div>
 
-<div class="trackListContainer">
-	<ul class="trackList">
+<div class="tracklistContainer">
+	<ul class="tracklist">
 		<?php
 		$songIdArray = $album->getSongIds();		
 
